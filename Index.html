@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mehak Gupta | Portfolio</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: black;
+        font-family: Arial, sans-serif;
+        color: white;
+        overflow: hidden;
+      }
+
+      .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(white 1px, transparent 1px), black;
+        background-size: 3px 3px;
+        z-index: 0;
+        animation: flicker 10s infinite alternate;
+      }
+
+      @keyframes flicker {
+        0% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        padding: 0 1rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      h2 {
+        color: #a78bfa;
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      p {
+        max-width: 600px;
+        margin-top: 1rem;
+        color: #ccc;
+        line-height: 1.6;
+      }
+
+      .btn {
+        margin-top: 2rem;
+        background: #8b5cf6;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+
+      .btn:hover {
+        background: #6d28d9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="hero">
+      <h1>Mehak Gupta</h1>
+      <h2>Data Analyst & ML Enthusiast</h2>
+      <p>
+        Passionate about leveraging AI and machine learning to solve real-world problems.<br />
+        Experienced in developing innovative solutions using cutting-edge technologies.
+      </p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </body>
+</html>
