@@ -246,47 +246,61 @@
   background-color: #8b5cf6;
   color: white;
 }
-      .timeline {
-  max-width: 1000px;
-  margin: 4rem auto;
-  padding: 0 1rem;
+ .timeline-visual {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
 }
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.timeline-container {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 20px;
+  border-left: 2px solid #8b5cf6;
+}
+.timeline-block {
+  position: relative;
+  margin: 2rem 0;
+  width: 100%;
+}
+.timeline-block.left::before, .timeline-block.right::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #8b5cf6;
+  border: 2px solid white;
+}
+.timeline-block .content {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-left: 1.5rem;
   color: var(--text-color);
 }
-.timeline-item {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-left: 3px solid #8b5cf6;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 6px;
+.timeline-block h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #a78bfa;
 }
-.timeline-item h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: var(--text-color);
-}
-.timeline-date {
+.timeline-block .date {
   font-size: 0.9rem;
   color: #aaa;
-  display: block;
-  margin: 0.5rem 0 1rem;
-}
-.timeline-item ul {
-  padding-left: 1.2rem;
-  margin: 0;
-  color: var(--text-color);
-}
-.timeline-item li {
   margin-bottom: 0.5rem;
+  display: block;
+}
+.timeline-block ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+.timeline-block li {
   line-height: 1.5;
+  margin-bottom: 0.5rem;
 }
-.timeline-item p {
-  margin: 0.5rem 0;
-  color: var(--text-color);
-}
+
 </style>
 
     </style>
@@ -324,7 +338,7 @@
   <div class="project-grid">
 
     <div class="project-card">
-      <img src="" alt="OceanVision project image">
+      <img src="/images/assets" alt="OceanVision project image">
       <div class="project-content">
         <h3>OceanVision: Real-Time Underwater Object Detection</h3>
         <p>Detects and classifies underwater objects in real time using CNNs and YOLOv5/v8, enabling marine research and monitoring.</p>
@@ -361,55 +375,77 @@
 
   </div>
 </section>
-<section id="experience" class="timeline">
+
+ <section id="experience" class="timeline-visual">
   <h2 class="section-title">Experience</h2>
-  <div class="timeline-item">
-    <h3>Research Assistant — Reinforcement Learning & Algorithm Analysis</h3>
-    <span class="timeline-date">Aug 2024 – May 2025 | San Diego State University</span>
-    <ul>
-      <li>Analyzed 2M+ row finance and telemetry datasets using SQL and Excel to uncover cost-saving insights.</li>
-      <li>Automated ETL workflows in Azure Data Factory, improving pipeline reliability by 25%.</li>
-      <li>Developed Power BI dashboards to visualize KPI trends for executive monitoring.</li>
-    </ul>
-  </div>
-  <div class="timeline-item">
-    <h3>Data Analytics Intern — Digital Innovation Lab</h3>
-    <span class="timeline-date">Oct 2023 – May 2024 | San Diego State University</span>
-    <ul>
-      <li>Built and deployed dbt models in Snowflake for daily transformations on 500K+ records.</li>
-      <li>Created Looker explores and Tableau dashboards for KPI tracking.</li>
-      <li>Automated pipelines with Python and SQL for fast report refreshes.</li>
-      <li>Instrumented Prometheus metrics and Grafana alerts for real-time monitoring.</li>
-    </ul>
-  </div>
-  <div class="timeline-item">
-    <h3>Software Engineer — Data Analytics</h3>
-    <span class="timeline-date">May 2022 – Jul 2023 | Wipro Ltd.</span>
-    <ul>
-      <li>Optimized Snowflake schemas and dbt pipelines, improving performance by 50%.</li>
-      <li>Built Looker-based embedded analytics for internal tools.</li>
-      <li>Authored SQL scripts using window functions and CTEs to surface 10% cost savings.</li>
-    </ul>
-  </div>
-  <div class="timeline-item">
-    <h3>Software Engineer Intern</h3>
-    <span class="timeline-date">Feb 2022 – Apr 2022 | Wipro Ltd.</span>
-    <ul>
-      <li>Supported ETL optimization for Grafana-ready datasets, cutting runtime in half.</li>
-    </ul>
+  <div class="timeline-container">
+    <div class="timeline-block left">
+      <div class="content">
+        <h3>Research Assistant — Reinforcement Learning & Algorithm Analysis</h3>
+        <span class="date">Aug 2024 – May 2025</span>
+        <p>San Diego State University</p>
+        <ul>
+          <li>Analyzed 2M+ row finance and telemetry datasets using SQL and Excel to uncover cost-saving insights.</li>
+          <li>Automated ETL workflows in Azure Data Factory, improving pipeline reliability by 25%.</li>
+          <li>Developed Power BI dashboards to visualize KPI trends for executive monitoring.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-block right">
+      <div class="content">
+        <h3>Data Analytics Intern — Digital Innovation Lab</h3>
+        <span class="date">Oct 2023 – May 2024</span>
+        <p>San Diego State University</p>
+        <ul>
+          <li>Built and deployed dbt models in Snowflake for daily transformations on 500K+ records.</li>
+          <li>Created Looker explores and Tableau dashboards for KPI tracking.</li>
+          <li>Automated pipelines with Python and SQL for fast report refreshes.</li>
+          <li>Instrumented Prometheus metrics and Grafana alerts for real-time monitoring.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-block left">
+      <div class="content">
+        <h3>Software Engineer — Data Analytics</h3>
+        <span class="date">May 2022 – Jul 2023</span>
+        <p>Wipro Ltd.</p>
+        <ul>
+          <li>Optimized Snowflake schemas and dbt pipelines, improving performance by 50%.</li>
+          <li>Built Looker-based embedded analytics for internal tools.</li>
+          <li>Authored SQL scripts using window functions and CTEs to surface 10% cost savings.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-block right">
+      <div class="content">
+        <h3>Software Engineer Intern</h3>
+        <span class="date">Feb 2022 – Apr 2022</span>
+        <p>Wipro Ltd.</p>
+        <ul>
+          <li>Supported ETL optimization for Grafana-ready datasets, cutting runtime in half.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
-<section id="education" class="timeline">
+
+<section id="education" class="timeline-visual">
   <h2 class="section-title">Education</h2>
-  <div class="timeline-item">
-    <h3>San Diego State University</h3>
-    <span class="timeline-date">Aug 2023 – May 2025 | San Diego, CA</span>
-    <p>MS in Computer Science<br>Specialization: Data Analytics and Machine Learning</p>
-  </div>
-  <div class="timeline-item">
-    <h3>HMRITM, GGSIPU</h3>
-    <span class="timeline-date">Aug 2018 – Jun 2022 | Delhi, India</span>
-    <p>Bachelor of Technology in Computer Science Engineering</p>
+  <div class="timeline-container">
+    <div class="timeline-block left">
+      <div class="content">
+        <h3>San Diego State University</h3>
+        <span class="date">Aug 2023 – May 2025</span>
+        <p>MS in Computer Science<br>Specialization: Data Analytics and Machine Learning</p>
+      </div>
+    </div>
+    <div class="timeline-block right">
+      <div class="content">
+        <h3>HMRITM, GGSIPU</h3>
+        <span class="date">Aug 2018 – Jun 2022</span>
+        <p>Bachelor of Technology in Computer Science Engineering</p>
+      </div>
+    </div>
   </div>
 </section>
 
