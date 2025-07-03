@@ -64,14 +64,12 @@ body {
   width: 100%;
 }
 
-/* Left - your name */
 .nav-left {
   flex: 1;
   font-weight: bold;
   color: var(--nav-text-color);
 }
 
-/* Center - nav links */
 nav.nav-center {
   flex: 2;
   display: flex;
@@ -79,25 +77,22 @@ nav.nav-center {
   gap: 2rem;
 }
 
-/* Right - toggle button */
-.nav-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* Make nav links inherit color and style */
-nav.nav-center a {
+.nav-center a {
   color: var(--nav-text-color);
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
 }
 
-nav.nav-center a:hover {
+.nav-center a:hover {
   color: var(--link-hover-color);
 }
 
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
 
 /* Mode toggle button */
 .mode-toggle {
@@ -427,23 +422,23 @@ section {
   </head>
   <body>
     <!-- NAVBAR -->
-    <header class="navbar">
-   <div class="nav-container">
-  <div class="nav-left">Mehak Gupta</div>
-  <nav class="nav-center">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="https://github.com/Mgupta1610" target="_blank">GitHub Profile</a>
-  </nav>
-  <div class="nav-right">
-    <button class="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+  <header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">Mehak Gupta</div>
+    <nav class="nav-center">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="https://github.com/Mgupta1610" target="_blank">GitHub Profile</a>
+    </nav>
+    <div class="nav-right">
+      <button class="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
   </div>
-</div>
+</header>
 
-    </header>
 
     <!-- HERO -->
     <section class="hero" id="about">
@@ -473,8 +468,7 @@ section {
       <h2 class="section-title">Experience</h2>
 
     <p>
-    My work experience as a Data Analyst/ S and working on different<br />
-    companies and projects.
+    My work experience as a Software Engineer and Data Analyst and working on different companies and projects.
   </p>
  
       <div class="timeline-container">
