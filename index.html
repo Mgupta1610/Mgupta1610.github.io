@@ -56,48 +56,48 @@ body {
 }
 
 
-/* Navbar */
-header.navbar {
-  background-color: var(--nav-bg);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
-}
-
 .nav-container {
-  width: 100%;
-  max-width: 1200px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
 }
 
+/* Left - your name */
 .nav-left {
-  font-size: 1.25rem;
+  flex: 1;
   font-weight: bold;
   color: var(--nav-text-color);
 }
 
-.nav-right {
+/* Center - nav links */
+nav.nav-center {
+  flex: 2;
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
 
-.nav-right a {
+/* Right - toggle button */
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Make nav links inherit color and style */
+nav.nav-center a {
   color: var(--nav-text-color);
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
 }
 
-.nav-right a:hover {
+nav.nav-center a:hover {
   color: var(--link-hover-color);
 }
+
 
 /* Mode toggle button */
 .mode-toggle {
@@ -428,18 +428,21 @@ section {
   <body>
     <!-- NAVBAR -->
     <header class="navbar">
-      <div class="nav-container">
-        <div class="nav-left">Mehak Gupta</div>
-        <nav class="nav-right">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="https://github.com/Mgupta1610" target="_blank">GitHub Profile</a>
-          <button class="mode-toggle" aria-label="Toggle dark/light mode">🌓</button>
-        </nav>
-      </div>
+   <div class="nav-container">
+  <div class="nav-left">Mehak Gupta</div>
+  <nav class="nav-center">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="https://github.com/Mgupta1610" target="_blank">GitHub Profile</a>
+  </nav>
+  <div class="nav-right">
+    <button class="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+  </div>
+</div>
+
     </header>
 
     <!-- HERO -->
