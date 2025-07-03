@@ -188,10 +188,11 @@ section {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  color: var(--btn-bg);
-  margin-bottom: 1.5rem;
+  color: white; /* white headline */
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 /* Timeline container shared by Experience and Education */
@@ -199,17 +200,17 @@ section {
   position: relative;
   margin-left: 20px;
   padding-left: 20px;
-  border-left: 3px solid var(--btn-bg);
+  border-left: 3px solid #8b5cf6; /* purple line */
 }
 
 /* Timeline block shared by Experience and Education */
 .timeline-block {
-  position: relative;
+ position: relative;
   margin-bottom: 2.5rem;
-  background-color: rgba(139, 92, 246, 0.1);
-  border: 1px solid var(--btn-bg);
+  border: 1px solid #8b5cf6;
   border-radius: 12px;
   padding: 1rem 1.5rem;
+  background-color: transparent;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -223,7 +224,7 @@ section {
   top: 20px;
   width: 14px;
   height: 14px;
-  background: var(--btn-bg);
+  background: #8b5cf6;
   border-radius: 50%;
   border: 3px solid white;
   box-sizing: content-box;
@@ -259,7 +260,52 @@ section {
   background: white;
   padding: 6px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  margin-right: 1rem;
+  flex-shrink: 0;
+}
+      /* Text container next to logo */
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Top row with university name and date side by side */
+.edu-info > .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.2rem;
+}
+/* University name - white, bold, bigger */
+.edu-info h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Dates - lighter gray */
+.edu-info .date {
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+/* Degree line - gray, smaller, below */
+.edu-info .degree {
+  color: #bbb;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+/* Grade line - below with normal alignment */
+.edu-info .grade {
+  color: #aaa;
+  font-weight: 700;
+  font-size: 0.85rem;
 }
 
 /* Responsive */
@@ -503,6 +549,7 @@ section {
     <!-- EDUCATION -->
 <section id="education" class="timeline-visual">
   <h2 class="section-title">Education</h2>
+  My education has been a journey of self-discovery and growth. My educational details are as follows.
   <div class="timeline-container">
     <div class="timeline-block">
       <div class="edu-card">
