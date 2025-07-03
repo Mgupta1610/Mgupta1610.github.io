@@ -1,610 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mehak Gupta | Portfolio</title>
-    <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mehak Gupta | Portfolio</title>
 
-/* Color variables for dark and light theme */
-:root {
-  /* Dark theme (default) */
-  --bg-color: #0f0f19;
-  --text-color: #e0e0e0;
-  --nav-bg: rgba(0, 0, 0, 0.85);
-  --nav-text-color: #e0e0e0;
-  --link-color: #aaa;
-  --link-hover-color: #8b5cf6;
-  --btn-bg: #8b5cf6;
-  --btn-hover-bg: #6d28d9;
-  --paragraph-color: #bbb;
-}
+  <!-- Google Fonts Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 
-body.light-theme {
-  /* Light theme overrides */
-  --bg-color: #ffffff;
-  --text-color: #111111;
-  --nav-bg: transparent;
-  --nav-text-color: #111111;
-  --link-color: #111111;
-  --link-hover-color: #8b5cf6;
-  --btn-bg: #8b5cf6;
-  --btn-hover-bg: #6d28d9;
-  --paragraph-color: #444444;
-}
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Body and general styles */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: poppins, sans-serif;
-  transition: background-color 0.3s, color 0.3s;
-  scroll-behavior: smooth;
-  min-height: 100vh;
-}
+    /* Color variables for dark and light theme */
+    :root {
+      /* Dark theme (default) */
+      --bg-color: #0f0f19;
+      --text-color: #e0e0e0;
+      --nav-bg: rgba(0, 0, 0, 0.85);
+      --nav-text-color: #e0e0e0;
+      --link-color: #aaa;
+      --link-hover-color: #8b5cf6;
+      --btn-bg: #8b5cf6;
+      --btn-hover-bg: #6d28d9;
+      --paragraph-color: #bbb;
+    }
 
-#experience > p,
-#about > p,
-#projects > p {
-  text-align: center;
-}
+    body.light-theme {
+      /* Light theme overrides */
+      --bg-color: #ffffff;
+      --text-color: #111111;
+      --nav-bg: transparent;
+      --nav-text-color: #111111;
+      --link-color: #111111;
+      --link-hover-color: #8b5cf6;
+      --btn-bg: #8b5cf6;
+      --btn-hover-bg: #6d28d9;
+      --paragraph-color: #444444;
+    }
 
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-}
+    /* Body and general styles */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
 
-.nav-left {
-  flex: 1;
-  font-weight: bold;
-  color: var(--nav-text-color);
-}
+    #experience > p,
+    #about > p,
+    #projects > p {
+      text-align: center;
+    }
 
-nav.nav-center {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
+    /* Navbar */
+    header.navbar {
+      background-color: var(--nav-bg);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
 
-.nav-center a {
-  color: var(--nav-text-color);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      width: 100%;
+    }
 
-.nav-center a:hover {
-  color: var(--link-hover-color);
-}
+    .nav-left {
+      flex: 1;
+      font-weight: bold;
+      color: var(--nav-text-color);
+    }
 
-.nav-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
+    nav.nav-center {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
 
-/* Mode toggle button */
-.mode-toggle {
-  background: none;
-  border: 1px solid #555;
-  border-radius: 8px;
-  padding: 0.4rem 0.6rem;
-  color: var(--nav-text-color);
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s, color 0.3s;
-}
+    .nav-center a {
+      color: var(--nav-text-color);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
 
-.mode-toggle:hover {
-  background-color: var(--btn-bg);
-  color: white;
-}
+    .nav-center a:hover {
+      color: var(--link-hover-color);
+    }
 
-/* Hero section */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 60px auto 0; /* account for navbar height */
-  flex-wrap: wrap;
-}
+    .nav-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
 
-.hero-text {
-  flex: 1 1 400px;
-  max-width: 600px;
-}
+    /* Mode toggle button */
+    .mode-toggle {
+      background: none;
+      border: 1px solid #555;
+      border-radius: 8px;
+      padding: 0.4rem 0.6rem;
+      color: var(--nav-text-color);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s, color 0.3s;
+    }
 
-.hero-text h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 0.5rem;
-}
+    .mode-toggle:hover {
+      background-color: var(--btn-bg);
+      color: white;
+    }
 
-.hero-text h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--btn-bg);
-  margin-bottom: 1rem;
-}
+    /* Hero section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 60px auto 0; /* account for navbar height */
+      flex-wrap: wrap;
+    }
 
-.hero-text p {
-  font-size: 1.125rem;
-  color: var(--paragraph-color);
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
+    .hero-text {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
 
-.btn {
-  display: inline-block;
-  background: var(--btn-bg);
-  color: white;
-  padding: 0.75rem 2rem;
-  font-weight: 600;
-  border-radius: 9999px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
 
-.btn:hover {
-  background: var(--btn-hover-bg);
-}
+    .hero-text h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--btn-bg);
+      margin-bottom: 1rem;
+    }
 
-/* Profile image */
-.hero-img {
-  flex: 0 1 320px;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--btn-bg);
-  box-shadow: 0 0 20px var(--btn-bg);
-}
+    .hero-text p {
+      font-size: 1.125rem;
+      color: var(--paragraph-color);
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
 
-.hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top; /* Focus on face */
-}
+    .btn {
+      display: inline-block;
+      background: var(--btn-bg);
+      color: white;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
 
-/* Sections */
-section {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
+    .btn:hover {
+      background: var(--btn-hover-bg);
+    }
 
-.section-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: white; /* white headline */
-  margin-bottom: 2rem;
-  text-align: center;
-}
+    /* Profile image */
+    .hero-img {
+      flex: 0 1 320px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--btn-bg);
+      box-shadow: 0 0 20px var(--btn-bg);
+    }
 
-/* Timeline container shared by Experience and Education */
-.timeline-container {
-  position: relative;
-  margin-left: 20px;
-  padding-left: 20px;
-  border-left: 3px solid #8b5cf6; /* purple line */
-}
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
 
-/* Timeline block shared by Experience and Education */
-.timeline-block {
-  position: relative;
-  margin-bottom: 2.5rem;
-  border: 1px solid #8b5cf6;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+    /* Sections */
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
 
-/* Timeline dot */
-.timeline-block::before {
-  content: '';
-  position: absolute;
-  left: -33px;
-  top: 20px;
-  width: 14px;
-  height: 14px;
-  background: #8b5cf6;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-sizing: content-box;
-}
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
 
-/* Education and Experience content styling */
-.timeline-block h3 {
-  margin-bottom: 0.3rem;
-  color: var(--btn-bg);
-  flex: 1 1 70%;
-}
+    /* Timeline container shared by Experience and Education */
+    .timeline-container {
+      position: relative;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 3px solid #8b5cf6;
+    }
 
-.timeline-block .date {
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 0.5rem;
-  flex: 0 0 30%;
-  text-align: right;
-}
+    /* Timeline block shared by Experience and Education */
+    .timeline-block {
+      position: relative;
+      margin-bottom: 2.5rem;
+      border: 1px solid #8b5cf6;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-.timeline-block p {
-  color: var(--text-color);
-  margin-top: 0.25rem;
-  flex-basis: 100%;
-}
+    /* Timeline dot */
+    .timeline-block::before {
+      content: '';
+      position: absolute;
+      left: -33px;
+      top: 20px;
+      width: 14px;
+      height: 14px;
+      background: #8b5cf6;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-sizing: content-box;
+    }
 
-/* Logo styling for Education timeline (optional) */
-.edu-card img.edu-logo {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  border-radius: 8px;
-  background: white;
-  padding: 6px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  flex-shrink: 0;
-}
+    /* Education and Experience content styling */
+    .timeline-block h3 {
+      margin-bottom: 0.3rem;
+      color: var(--btn-bg);
+      flex: 1 1 70%;
+    }
 
-/* Text container next to logo */
-.edu-info {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
+    .timeline-block .date {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+      flex: 0 0 30%;
+      text-align: right;
+    }
 
-/* Top row with university name and date side by side */
-.edu-info > .top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.2rem;
-}
+    .timeline-block p {
+      color: var(--text-color);
+      margin-top: 0.25rem;
+      flex-basis: 100%;
+    }
 
-/* University name - white, bold, bigger */
-.edu-info h3 {
-  color: white;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin: 0;
-}
+    /* Logo styling for Education timeline (optional) */
+    .edu-card img.edu-logo {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: white;
+      padding: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
 
-/* Dates - lighter gray */
-.edu-info .date {
-  color: #888;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-left: 1rem;
-  white-space: nowrap;
-}
+    /* Text container next to logo */
+    .edu-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
 
-/* Degree line - gray, smaller, below */
-.edu-info .degree {
-  color: #bbb;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
-}
+    /* Top row with university name and date side by side */
+    .edu-info > .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.2rem;
+    }
 
-/* Grade line - below with normal alignment */
-.edu-info .grade {
-  color: #aaa;
-  font-weight: 700;
-  font-size: 0.85rem;
-}
+    /* University name - white, bold, bigger */
+    .edu-info h3 {
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 0;
+    }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .timeline-block {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .timeline-block .date {
-    text-align: left;
-    margin-bottom: 0.75rem;
-  }
-  .timeline-block h3 {
-    flex-basis: 100%;
-  }
-  .timeline-container {
-    margin-left: 10px;
-    padding-left: 10px;
-    border-left-width: 2px;
-  }
-  .timeline-block::before {
-    left: -25px;
-    width: 12px;
-    height: 12px;
-    border-width: 2px;
-    top: 10px;
-  }
-}
+    /* Dates - lighter gray */
+    .edu-info .date {
+      color: #888;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-left: 1rem;
+      white-space: nowrap;
+    }
 
-/* Projects Grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
+    /* Degree line - gray, smaller, below */
+    .edu-info .degree {
+      color: #bbb;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
 
-.project-card {
-  background: rgba(255 255 255 / 0.05);
-  border: 1px solid #444;
-  border-radius: 12px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s;
-}
+    /* Grade line - below with normal alignment */
+    .edu-info .grade {
+      color: #aaa;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--btn-bg);
-}
+    /* Responsive */
+    @media (max-width: 600px) {
+      .timeline-block {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .timeline-block .date {
+        text-align: left;
+        margin-bottom: 0.75rem;
+      }
+      .timeline-block h3 {
+        flex-basis: 100%;
+      }
+      .timeline-container {
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left-width: 2px;
+      }
+      .timeline-block::before {
+        left: -25px;
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+        top: 10px;
+      }
+    }
 
-.project-card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--btn-bg);
-}
+    /* Projects Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
 
-.project-card p {
-  flex-grow: 1;
-  margin-bottom: 1rem;
-  color: var(--text-color);
-}
+    .project-card {
+      background: rgba(255 255 255 / 0.05);
+      border: 1px solid #444;
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+    }
 
-.tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--btn-bg);
+    }
 
-.tags span {
-  background: #2d2d2d;
-  color: #ccc;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-}
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--btn-bg);
+    }
 
-.project-card a {
-  align-self: flex-start;
-  padding: 0.4rem 0.9rem;
-  border: 1px solid var(--btn-bg);
-  border-radius: 8px;
-  color: var(--btn-bg);
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s;
-}
+    .project-card p {
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
 
-.project-card a:hover {
-  background: var(--btn-bg);
-  color: white;
-}
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
 
-/* Responsive */
-@media (max-width: 650px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
+    .tags span {
+      background: #2d2d2d;
+      color: #ccc;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
 
-  .hero-img {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
+    .project-card a {
+      align-self: flex-start;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--btn-bg);
+      border-radius: 8px;
+      color: var(--btn-bg);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
 
-  .nav-container {
-    padding: 0 1rem;
-  }
-}
+    .project-card a:hover {
+      background: var(--btn-bg);
+      color: white;
+    }
 
-  </head>
-  <body>
-    <!-- NAVBAR -->
+    /* Responsive */
+    @media (max-width: 650px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-img {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .nav-container {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
   <header class="navbar">
-  <div class="nav-container">
-    <div class="nav-left">Mehak Gupta</div>
-    <nav class="nav-center">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="https://github.com/Mgupta1610" target="_blank">GitHub Profile</a>
-    </nav>
-    <div class="nav-right">
-      <button class="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    <div class="nav-container">
+      <div class="nav-left">Mehak Gupta</div>
+      <nav class="nav-center">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="https://github.com/Mgupta1610" target="_blank">GitHub Profile</a>
+      </nav>
+      <div class="nav-right">
+        <button class="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-text">
+      <h1>Hi,</h1>
+      <h1>I am Mehak Gupta</h1>
+      <h2>
+        I am a <span id="typed-text"></span>
+      </h2>
 
-    <!-- HERO -->
-<section class="hero" id="about">
-  <div class="hero-text">
-    <h1>Hi,</h1>
-    <h1>I am Mehak Gupta</h1>
-    <h2>
-      I am a <span id="typed-text"></span>
-    </h2>
+      <p>
+        Data professional skilled in machine learning, data visualization, and
+        software development. Actively seeking data-driven roles.
+      </p>
+      <a href="your_resume_link.pdf" target="_blank" class="btn"
+        >Check Resume</a
+      >
+    </div>
+    <div class="hero-img">
+      <img
+        src="images/assets/profile_img.JPG"
+        alt="Mehak Gupta"
+        loading="lazy"
+        width="320"
+        height="320"
+      />
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="timeline-visual">
+    <h2 class="section-title">Experience</h2>
 
     <p>
-      Data professional skilled in machine learning, data visualization, and
-      software development. Actively seeking data-driven roles.
+      My work experience as a Software Engineer and Data Analyst and working on different companies and projects.
     </p>
-    <a href="your_resume_link.pdf" target="_blank" class="btn"
-      >Check Resume</a
-    >
-  </div>
-      <div class="hero-img">
-   <img src="images/assets/profile_img.JPG" alt="Mehak Gupta" loading="lazy" width="320" height="320" />
+
+    <div class="timeline-container">
+      <div class="timeline-block">
+        <h3>Research Assistant — Reinforcement Learning & Algorithm Analysis</h3>
+        <span class="date">Aug 2024 – May 2025</span>
+        <p>San Diego State University</p>
       </div>
-    </section>
+      <div class="timeline-block">
+        <h3>Data Analytics Intern — Digital Innovation Lab</h3>
+        <span class="date">Oct 2023 – May 2024</span>
+        <p>San Diego State University</p>
+      </div>
+      <div class="timeline-block">
+        <h3>Software Engineer — Data Analytics</h3>
+        <span class="date">May 2022 – Jul 2023</span>
+        <p>Wipro Ltd.</p>
+      </div>
+      <div class="timeline-block">
+        <h3>Software Engineer Intern</h3>
+        <span class="date">Feb 2022 – Apr 2022</span>
+        <p>Wipro Ltd.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="timeline-visual">
-      <h2 class="section-title">Experience</h2>
-
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2 class="section-title">Projects</h2>
     <p>
-    My work experience as a Software Engineer and Data Analyst and working on different companies and projects.
-  </p>
- 
-      <div class="timeline-container">
-        <div class="timeline-block">
-          <h3>Research Assistant — Reinforcement Learning & Algorithm Analysis</h3>
-          <span class="date">Aug 2024 – May 2025</span>
-          <p>San Diego State University</p>
-        </div>
-        <div class="timeline-block">
-          <h3>Data Analytics Intern — Digital Innovation Lab</h3>
-          <span class="date">Oct 2023 – May 2024</span>
-          <p>San Diego State University</p>
-        </div>
-        <div class="timeline-block">
-          <h3>Software Engineer — Data Analytics</h3>
-          <span class="date">May 2022 – Jul 2023</span>
-          <p>Wipro Ltd.</p>
-        </div>
-        <div class="timeline-block">
-          <h3>Software Engineer Intern</h3>
-          <span class="date">Feb 2022 – Apr 2022</span>
-          <p>Wipro Ltd.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-      <h2 class="section-title">Projects</h2>
-      I have worked on diverse projects spanning machine learning models, data analytics, and dashboard creation.<br>
+      I have worked on diverse projects spanning machine learning models, data analytics, and dashboard creation.<br />
       Below are some highlights showcasing my skills and experience.
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>OceanVision: Real-Time Underwater Object Detection</h3>
-          <p>
-            Detects and classifies underwater objects in real time using CNNs
-            and YOLOv5/v8, enabling marine research and monitoring.
-          </p>
-          <div class="tags">
-            <span>YOLOv5</span><span>YOLOv8</span><span>Python</span
-            ><span>CNN</span>
-          </div>
-          <a href="https://github.com/mehakgupta/oceanvision" target="_blank"
-            >View on GitHub</a
-          >
+    </p>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>OceanVision: Real-Time Underwater Object Detection</h3>
+        <p>
+          Detects and classifies underwater objects in real time using CNNs
+          and YOLOv5/v8, enabling marine research and monitoring.
+        </p>
+        <div class="tags">
+          <span>YOLOv5</span><span>YOLOv8</span><span>Python</span><span>CNN</span>
         </div>
+        <a href="https://github.com/mehakgupta/oceanvision" target="_blank"
+          >View on GitHub</a
+        >
+      </div>
 
-        <div class="project-card">
-          <h3>Price Pulse: Predicting Airbnb Prices</h3>
-          <p>
-            Regression-based price prediction model analyzing Airbnb listings
-            for optimized host pricing strategies.
-          </p>
-          <div class="tags">
-            <span>Scikit-learn</span><span>Regression</span
-            ><span>Python</span><span>Pandas</span>
-          </div>
-          <a
-            href="https://github.com/mehakgupta/price-pulse-predicting-airbnb-prices"
-            target="_blank"
-            >View on GitHub</a
-          >
+      <div class="project-card">
+        <h3>Price Pulse: Predicting Airbnb Prices</h3>
+        <p>
+          Regression-based price prediction model analyzing Airbnb listings
+          for optimized host pricing strategies.
+        </p>
+        <div class="tags">
+          <span>Scikit-learn</span><span>Regression</span><span>Python</span><span>Pandas</span>
         </div>
+        <a href="https://github.com/mehakgupta/price-pulse-predicting-airbnb-prices" target="_blank"
+          >View on GitHub</a
+        >
+      </div>
 
-        <div class="project-card">
-          <h3>Hybrid Movie Recommendation System</h3>
-          <p>
-            Combines genre-based, content-based, and collaborative filtering
-            techniques to recommend movies with accuracy and diversity.
-          </p>
-          <div class="tags">
-            <span>KNN</span><span>Apriori</span><span>KMeans</span
-            ><span>MovieLens</span>
+      <div class="project-card">
+        <h3>Hybrid Movie Recommendation System</h3>
+        <p>
+          Combines genre-based, content-based, and collaborative filtering
+          techniques to recommend movies with accuracy and diversity.
+        </p>
+        <div class="tags">
+          <span>KNN</span><span>Apriori</span><span>KMeans</span><span>MovieLens</span>
+        </div>
+        <a href="https://github.com/mehakgupta/hybrid-movie-recommendation" target="_blank"
+          >View on GitHub</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="timeline-visual">
+    <h2 class="section-title">Education</h2>
+    <p>
+      My education has been a journey of self-discovery and growth. My <br />
+      educational details are as follows.
+    </p>
+    <div class="timeline-container">
+      <div class="timeline-block">
+        <div class="edu-card">
+          <img src="images/assets/SDSU.png" alt="San Diego State University" class="edu-logo" />
+          <div class="edu-info">
+            <div class="top-row">
+              <h3>San Diego State University, San Diego, CA, United States</h3>
+              <span class="date">August 2023 – May 2025</span>
+            </div>
+            <p class="degree"><strong>Master of Science – MS, Computer Science</strong></p>
+            <p class="grade"><strong>Grade:</strong> 3.8 / 4.0 GPA</p>
           </div>
-          <a
-            href="https://github.com/mehakgupta/hybrid-movie-recommendation"
-            target="_blank"
-            >View on GitHub</a
-          >
         </div>
       </div>
-    </section>
-
-    <!-- EDUCATION -->
-<section id="education" class="timeline-visual">
-  <h2 class="section-title">Education</h2>
-  <p>My education has been a journey of self-discovery and growth. My <br> educational details are as follows.</p>
-  <div class="timeline-container">
-    <div class="timeline-block">
-      <div class="edu-card">
-      <img src="images/assets/SDSU.png" alt="San Diego State University" class="edu-logo" />
-        <div class="edu-info">
-          <h3>San Diego State University, San Diego, CA, United States</h3>
-          <p><strong>Master of Science – MS, Computer Science</strong></p>
-          <p>August 2023 – May 2025</p>
-          <p><strong>Grade:</strong> 3.8 / 4.0 GPA</p>
+      <div class="timeline-block">
+        <div class="edu-card">
+          <img src="images/assets/GGSIPU.png" alt="GGSIPU" class="edu-logo" />
+          <div class="edu-info">
+            <div class="top-row">
+              <h3>Guru Gobind Singh Indraprastha University, Delhi, India</h3>
+              <span class="date">August 2018 – June 2022</span>
+            </div>
+            <p class="degree"><strong>Bachelor of Technology – B.Tech, Computer Science and Engineering</strong></p>
+            <p class="grade"><strong>Grade:</strong> 3.8 / 4.0 GPA</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="timeline-block">
-      <div class="edu-card">
-       <img src="images/assets/GGSIPU.png" alt="GGSIPU" class="edu-logo" />
-        <div class="edu-info">
-          <h3>Guru Gobind Singh Indraprastha University, Delhi, India</h3>
-          <p><strong>Bachelor of Technology – B.Tech, Computer Science and Engineering</strong></p>
-          <p>August 2018 – June 2022</p>
-          <p><strong>Grade:</strong> 3.8 / 4.0 GPA</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    // Theme toggle
+    const toggleBtn = document.querySelector(".mode-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+    });
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-      // Theme toggle
-      const toggleBtn = document.querySelector(".mode-toggle");
-      toggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
-      });
-
-      // Typed.js init
-      var typed = new Typed("#typed-text", {
-        strings: [
-          "Data Analyst",
-          "Python Developer",
-          "Machine Learning Engineer",
-          "Software Engineer"
-        ],
-        typeSpeed: 80,
-        backSpeed: 50,
-        backDelay: 1500,
-        loop: true,
-        showCursor: true,
-        cursorChar: "|",
-      });
-    </script>
-  </body>
+    // Typed.js init
+    var typed = new Typed("#typed-text", {
+      strings: [
+        "Data Analyst",
+        "Python Developer",
+        "Machine Learning Engineer",
+        "Software Engineer"
+      ],
+      typeSpeed: 80,
+      backSpeed: 50,
+      backDelay: 1500,
+      loop: true,
+      showCursor: true,
+      cursorChar: "|",
+    });
+  </script>
+</body>
 </html>
