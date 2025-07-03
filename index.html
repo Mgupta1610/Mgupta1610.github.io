@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mehak Gupta | Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
       /* Reset */
       * {
@@ -304,6 +305,24 @@
     </style>
   </head>
   <body>
+    <script>
+  var typed = new Typed('#typed-text', {
+    strings: [
+      'Business Analyst',
+      'Data Analyst',
+      'Python Developer',
+      'Machine Learning Engineer',
+      'Software Engineer'
+    ],
+    typeSpeed: 80,
+    backSpeed: 50,
+    backDelay: 1500,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|',
+  });
+</script>
+
     <!-- NAVBAR -->
     <header class="navbar">
       <div class="nav-container">
@@ -323,10 +342,10 @@
     <section class="hero" id="about">
       <div class="hero-text">
         <h1>Hi, I am Mehak Gupta</h1>
-        <h2>
-          I am a Data Analyst, Data Science Analyst, Machine Learning Engineer,
-          Python Developer, Software Engineer
-        </h2>
+<h2>
+  I am a <span id="typed-text"></span>
+</h2>
+
         <p>
           Data professional skilled in machine learning, data visualization, and
           software development. Actively seeking data-driven roles.
