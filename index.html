@@ -236,53 +236,59 @@
 }
 
 
-    /* Timeline block shared by Experience and Education */
-    .timeline-block {
-      position: relative;
-      margin-bottom: 2.5rem;
-      border: 1px solid #8b5cf6;
-      border-radius: 12px;
-      padding: 1rem 1.5rem;
-      background-color: transparent;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+   .timeline-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid #8b5cf6;
+  border-radius: 12px;
+  background-color: transparent;
+  margin-bottom: 2rem;
+}
 
-    /* Timeline dot */
-    .timeline-block::before {
-      content: '';
-      position: absolute;
-      left: -33px;
-      top: 20px;
-      width: 14px;
-      height: 14px;
-      background: #8b5cf6;
-      border-radius: 50%;
-      border: 3px solid white;
-      box-sizing: content-box;
-    }
+.timeline-block img.edu-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: white;
+  padding: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
 
-    /* Education and Experience content styling */
-    .timeline-block h3 {
-      margin-bottom: 0.3rem;
-      color: var(--btn-bg);
-      flex: 1 1 70%;
-    }
+.edu-info {
+  display: flex;
+  flex-direction: column;
+}
 
-    .timeline-block .date {
-      font-size: 0.85rem;
-      color: #888;
-      margin-bottom: 0.5rem;
-      flex: 0 0 30%;
-      text-align: right;
-    }
+.edu-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
 
-    .timeline-block p {
-      color: var(--text-color);
-      margin-top: 0.25rem;
-      flex-basis: 100%;
-    }
+.edu-info .degree {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #bbb;
+  margin-bottom: 0.25rem;
+}
+
+.edu-info .date {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 0.25rem;
+}
+
+.edu-info .grade {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ccc;
+}
 
     /* Logo styling for Education timeline (optional) */
     .edu-card img.edu-logo {
@@ -510,41 +516,45 @@ Actively seeking data-driven roles.
       <br>
 
     </p>
+<div class="timeline-block">
+  <img src="images/assets/SDSU.png" alt="SDSU" class="edu-logo" />
+  <div class="edu-info">
+    <h3>Research Assistant</h3>
+    <p class="degree">Reinforcement Learning & Algorithm Analysis</p>
+    <p class="date">Aug 2024 – May 2025</p>
+    <p class="grade">San Diego State University</p>
+  </div>
+</div>
 
-    <div class="timeline-container">
-      <div class="timeline-block">
-          <img src="images/assets/SDSU.png" alt="San Diego State University" class="edu-logo" width="50"
-        height="50" />
-          <h3>Research Assistant — Reinforcement Learning & Algorithm Analysis</h3>
-        <span class="date">Aug 2024 – May 2025</span>
-        <p>San Diego State University</p>
-      </div>
-      
-      <div class="timeline-block">
-          <img src="images/assets/DI_LAB_Logo-2.png" alt="San Diego State University" class="edu-logo" width="50"
-        height="50" />
-        <h3>Data Analytics Intern — Digital Innovation Lab</h3>
-        <span class="date">Oct 2023 – May 2024</span>
-        <p>San Diego State University</p>
-      </div>
-      
-      <div class="timeline-block">
-          <img src="images/assets/Wipro-Logo.png" alt="San Diego State University" class="edu-logo" width="50"
-        height="50" />
-        <h3>Software Engineer — Data Analytics</h3>
-        <span class="date">May 2022 – Jul 2023</span>
-        <p>Wipro Ltd.</p>
-      </div>
-      
-      <div class="timeline-block">
-          <img src="images/assets/Wipro-Logo.png" alt="San Diego State University" class="edu-logo" width="50"
-        height="50" />
-        <h3>Software Engineer Intern</h3>
-        <span class="date">Feb 2022 – Apr 2022</span>
-        <p>Wipro Ltd.</p>
-      </div>
-      
-    </div>
+    <div class="timeline-block">
+  <img src="images/assets/DI_LAB_Logo-2.png" alt="SDSU" class="edu-logo" />
+  <div class="edu-info">
+    <h3>Data Analytics Intern</h3>
+    <p class="degree">Digital Innovation Lab</p>
+    <p class="date">Oct 2023 – May 2024</p>
+    <p class="grade">San Diego State University</p>
+  </div>
+</div>
+
+<div class="timeline-block">
+  <img src="images/assets/Wipro-Logo.png" alt="Wipro" class="edu-logo" />
+  <div class="edu-info">
+    <h3>Software Engineer — Data Analytics</h3>
+    <p class="degree">Reinforcement Learning & Algorithm Analysis</p>
+    <p class="date">May 2022 – Jul 2023</p>
+    <p class="grade">Wipro Ltd.</p>
+  </div>
+</div>
+
+    <div class="timeline-block">
+  <img src="images/assets/Wipro-Logo.png" alt="Wipro" class="edu-logo" />
+  <div class="edu-info">
+    <h3>Software Engineer Intern</h3>
+    <p class="degree"></p>
+    <p class="date">Feb 2022 – Apr 2022</p>
+    <p class="grade">Wipro Ltd.</p>
+  </div>
+</div>
   </section>
 
   <!-- PROJECTS -->
