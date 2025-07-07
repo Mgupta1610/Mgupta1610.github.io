@@ -293,6 +293,63 @@
   font-size: 0.9rem;
   font-weight: 500;
 }
+.skills-section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid #8b5cf6;
+  border-radius: 20px;
+  background-color: #111;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.skills-section p {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+  text-align: center;
+  color: #ccc;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  border: 1px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ddd;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+  background-color: #8b5cf6;
+  color: white;
+}
 
     /* Responsive */
     @media (max-width: 600px) {
@@ -440,6 +497,8 @@ Actively seeking data-driven roles.
         >Check Resume</a
       >
     </div>
+
+    
     <div class="hero-img">
       <img
         src="images/assets/profile_img.JPG"
@@ -450,7 +509,85 @@ Actively seeking data-driven roles.
       />
     </div>
   </section>
+   <!-- SKILL -->
+  <section class="skills-section">
+  <h2>Skills</h2>
+  <p>Below are the technical and analytical skills I’ve specialized in and implemented in real-world data science and analytics projects.</p>
 
+      <div class="skill-category">
+    <h3>Programming Languages</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">R</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">SAS</span>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>Databases</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">MySQL</span>
+      <span class="skill-tag">Oracle</span>
+      <span class="skill-tag">MongoDB</span>
+      <span class="skill-tag">BigQuery</span>
+      <span class="skill-tag">Snowflake</span>
+      <span class="skill-tag">Redshift</span>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>Tools</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">Tableau</span>
+      <span class="skill-tag">Power BI</span>
+      <span class="skill-tag">Excel (VBA, Pivot)</span>
+      <span class="skill-tag">Amazon QuickSight</span>
+      <span class="skill-tag">Grafana</span>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>Libraries & Frameworks</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">Pandas</span>
+      <span class="skill-tag">NumPy</span>
+      <span class="skill-tag">Scikit-learn</span>
+      <span class="skill-tag">TensorFlow</span>
+      <span class="skill-tag">Keras</span>
+      <span class="skill-tag">PyTorch</span>
+      <span class="skill-tag">Matplotlib</span>
+      <span class="skill-tag">Seaborn</span>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>Cloud & DevOps</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag">GCP</span>
+      <span class="skill-tag">Azure</span>
+      <span class="skill-tag">Airflow</span>
+      <span class="skill-tag">Jenkins</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">Kubernetes</span>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>Techniques</h3>
+    <div class="skill-tags">
+      <span class="skill-tag">EDA</span>
+      <span class="skill-tag">A/B Testing</span>
+      <span class="skill-tag">KPI Reporting</span>
+      <span class="skill-tag">Forecasting</span>
+      <span class="skill-tag">Regression</span>
+      <span class="skill-tag">Classification</span>
+      <span class="skill-tag">Clustering</span>
+    </div>
+  </div>
+</section>
   <!-- EXPERIENCE -->
   <section id="experience" class="timeline-visual">
     <h2 class="section-title">Experience</h2>
