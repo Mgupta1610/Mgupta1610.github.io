@@ -225,8 +225,7 @@
       text-align: center;
     }
 
-    /* Timeline container shared by Experience and Education */
-      .timeline-container {
+ .timeline-container {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -235,10 +234,9 @@
   max-width: 1100px;
 }
 
-
-   .timeline-block {
+.timeline-block {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   padding: 1.2rem;
   border: 1px solid #8b5cf6;
@@ -247,13 +245,19 @@
   margin-bottom: 2rem;
 }
 
-.timeline-block img.edu-logo {
-  width: 60px;
-  height: 60px;
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.edu-logo {
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   border-radius: 8px;
   background: white;
-  padding: 5px;
+  padding: 6px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
@@ -264,90 +268,31 @@
 }
 
 .edu-info h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
   color: white;
-  margin-bottom: 0.25rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem 0;
 }
 
 .edu-info .degree {
+  color: #bbb;
   font-size: 1rem;
   font-weight: 500;
-  color: #bbb;
   margin-bottom: 0.25rem;
 }
 
 .edu-info .date {
+  color: #aaa;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #aaa;
   margin-bottom: 0.25rem;
 }
 
 .edu-info .grade {
+  color: #ccc;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #ccc;
 }
-
-    /* Logo styling for Education timeline (optional) */
-    .edu-card img.edu-logo {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: white;
-      padding: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      flex-shrink: 0;
-    }
-
-    /* Text container next to logo */
-    .edu-info {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    /* Top row with university name and date side by side */
-    .edu-info > .top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.2rem;
-    }
-
-    /* University name - white, bold, bigger */
-    .edu-info h3 {
-      color: white;
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin: 0;
-    }
-
-    /* Dates - lighter gray */
-    .edu-info .date {
-      color: #888;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-left: 1rem;
-      white-space: nowrap;
-    }
-
-    /* Degree line - gray, smaller, below */
-    .edu-info .degree {
-      color: #bbb;
-      font-size: 0.95rem;
-      margin-bottom: 0.3rem;
-      font-weight: 600;
-    }
-
-    /* Grade line - below with normal alignment */
-    .edu-info .grade {
-      color: #aaa;
-      font-weight: 700;
-      font-size: 0.85rem;
-    }
 
     /* Responsive */
     @media (max-width: 600px) {
@@ -675,24 +620,20 @@ Actively seeking data-driven roles.
   <section id="education" class="timeline-visual">
     <h2 class="section-title">Education</h2>
     <p>
-      My education has been a journey of self-discovery and growth. My <br />
-      educational details are as follows.
+      My education has been a journey of self-discovery and growth. My educational details are as follows. <br> <br><br>
     </p>
-    <div class="timeline-container">
-      <div class="timeline-block">
-        <div class="edu-card">
-          <img src="images/assets/SDSU.png" alt="San Diego State University" class="edu-logo" />
-          <div class="edu-info">
-            <div class="top-row">
-              <h3>San Diego State University, San Diego, CA, United States</h3>
-            </div>
-            <p class="degree"><strong>Master of Science – MS, Computer Science</strong></p>
-                          <span class="date">August 2023 – May 2025</span>
+<div class="timeline-block">
+  <div class="edu-card">
+    <img src="images/assets/SDSU.png" alt="San Diego State University" class="edu-logo" />
+    <div class="edu-info">
+      <h3>San Diego State University, San Diego, CA, United States</h3>
+      <p class="degree">Master of Science – MS, Computer Science</p>
+      <p class="date">August 2023 – May 2025</p>
+      <p class="grade">Grade: 3.8 / 4.0 GPA</p>
+    </div>
+  </div>
+</div>
 
-            <p class="grade"><strong>Grade:</strong> 3.8 / 4.0 GPA</p>
-          </div>
-        </div>
-      </div>
       <div class="timeline-block">
         <div class="edu-card">
           <img src="images/assets/GGSIPU.png" alt="GGSIPU" class="edu-logo" />
@@ -701,7 +642,7 @@ Actively seeking data-driven roles.
               <h3>Guru Gobind Singh Indraprastha University, Delhi, India</h3>
             </div>
             <p class="degree"><strong>Bachelor of Technology – B.Tech, Computer Science and Engineering</strong></p>
-                          <p class="date">August 2018 – June 2022</p>
+                          <span class="date">August 2018 – June 2022</span>
                            <p class="grade"><strong>Grade:</strong> 3.8 / 4.0 GPA</p>
           </div>
         </div>
