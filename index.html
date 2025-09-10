@@ -126,22 +126,36 @@
             }
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .hero h1 {
+     font-size: 3.5rem;
+     font-weight: 700;
+     margin-bottom: 1rem;
+     color: #ffffff;
+     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #a0a0a0;
-            line-height: 1.6;
-        }
+/* Make hero description text lighter */
+  .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   }
+
+    /* Optional: Add text shadow to any text that needs better visibility */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* For better contrast on colored backgrounds */
+.light-text {
+    color: #ffffff !important;
+}
+
+.semi-light-text {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
 
         .cta-button {
             display: inline-block;
@@ -471,7 +485,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">YourName</div>
+            <div class="logo">Mehak Gupta</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -486,7 +500,9 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Software and Data Enthusiast</h1>
-            <p>Hey! I’m Mehak Gupta. I unite Data, AI, and business sense to turn tough questions into clear, confident decisions.</p>
+            <br>
+            <p><h3>Hey! I’m Mehak Gupta.</h3></p>
+            <p>I unite Data, AI, and business sense to turn tough questions into clear, confident decisions.</p>
             <a href="#contact" class="cta-button">Let's Work Together</a>
         </div>
     </section>
@@ -496,14 +512,14 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Your Photo">
+                <img src="https://github.com/Mgupta1610/Mgupta1610.github.io/blob/main/images/assets/Portfolio_Image.png" alt="Your Photo">
             </div>
             <div class="about-text">
-                <p>I'm a passionate full-stack developer with expertise in modern web technologies. I love creating digital experiences that are not only functional but also beautiful and intuitive.</p>
-                <br>
-                <p>With a strong foundation in both frontend and backend development, I enjoy tackling complex problems and turning ideas into reality. I'm always eager to learn new technologies and stay up-to-date with industry trends.</p>
-                <br>
-                <p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.</p>
+              <p>Born in Delhi, India, I’ve always been passionate about technology, data, and solving modern problems with smart, simple solutions. I completed my Bachelor’s in Computer Science & Engineering, gained 2 years of professional experience, and am now pursuing my Master’s at San Diego State University.</p>
+              <br>
+              <p>My interests lie in Data Analytics, AI-driven Business Insights, Data Engineering, and Cloud-based services. I enjoy working at the intersection of data and decision-making, and I’m excited to bring value to organizations that share these priorities.</p>
+              <br>
+               <p>I learn best by building—whether it’s dashboards, AI-powered applications, or data pipelines—while exploring the latest tools and trends in analytics and software.</p>
             </div>
         </div>
     </section>
