@@ -763,6 +763,21 @@ section.skills > h2.section-title{
     }
 });
 
+        // Toggle project details
+function toggleProjectDetails(button) {
+    const card = button.closest('.project-card');
+    const summary = card.querySelector('.project-summary');
+    const details = card.querySelector('.project-details');
+    
+    if (details.style.display === 'none' || details.style.display === '') {
+        summary.style.display = 'none';
+        details.style.display = 'block';
+    } else {
+        details.style.display = 'none';
+        summary.style.display = 'block';
+    }
+}
+
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
