@@ -300,10 +300,21 @@
         }
 
         /* Projects Section */
+       /* Projects Section */
         .projects {
             padding: 6rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #3b82f6, #9F1239);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .projects-grid {
@@ -355,6 +366,7 @@
         .project-links {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .project-link {
@@ -366,11 +378,103 @@
             font-size: 0.9rem;
             border: 1px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .project-link:hover {
             background: #3b82f6;
             color: white;
+        }
+
+        .github-link {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .github-link:hover {
+            background: #22c55e;
+            color: white;
+        }
+
+        /* Expandable Project Details */
+        .project-details {
+            padding: 0 2rem 2rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .project-details.show {
+            opacity: 1;
+            max-height: 1000px;
+            padding: 2rem;
+        }
+
+        .detail-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-section h4 {
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .detail-section p {
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .detail-section ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .detail-section li {
+            color: #a0a0a0;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .detail-section strong {
+            color: #ffffff;
+        }
+
+        .expand-btn, .collapse-btn {
+            background: rgba(156, 163, 175, 0.2);
+            color: #9ca3af;
+            border: 1px solid rgba(156, 163, 175, 0.3);
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .expand-btn:hover, .collapse-btn:hover {
+            background: #9ca3af;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .project-links {
+                justify-content: center;
+            }
+            
+            .projects {
+                padding: 4rem 1rem;
+            }
         }
 
         /* Contact Section */
@@ -600,16 +704,85 @@ section.skills > h2.section-title{
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects fade-in">
-        <h2 class="section-title">Featured Projects</h2>
+    <section class="projects">
+        <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-               <p><h2>ETL Pipeline & Data Engineering</h2></p>
-           <!-- Expandable Project Card -->
-<div class="project-card expandable-card">
-    <div class="project-image">📊</div>
-    <div class="project-content">
-        <h3 class="project-title">End-to-End Business Intelligence with Snowflake and Power BI</h3>
-        
+            <!-- Project 1 - Business Intelligence Dashboard (Expandable) -->
+            <div class="project-card">
+                <div class="project-image">📊</div>
+                <div class="project-content">
+                    <h3 class="project-title">Business Intelligence Dashboard</h3>
+                    <p class="project-description">An end-to-end BI solution with Snowflake data warehouse and Power BI dashboards for tracking warehouse compute costs and user activity patterns.</p>
+                    <div class="project-links">
+                        <button class="project-link expand-btn" onclick="toggleProjectDetails(this)">Show More</button>
+                        <a href="https://github.com/yourusername/snowflake-powerbi-project" class="project-link github-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Detailed View (Initially Hidden) -->
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h4>Problem</h4>
+                        <p>Business teams lacked a unified and centralized view of key metrics. Data was siloed, making it difficult to analyze performance and make informed decisions, particularly regarding data warehouse costs and user activity.</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Solution</h4>
+                        <p>I designed and implemented a comprehensive end-to-end business intelligence solution. This involved building a data warehouse in <strong>Snowflake</strong> based on a <strong>star schema</strong> model, where I created fact and dimension tables. I then leveraged <strong>Power BI</strong> to connect to this warehouse, perform data transformations with <strong>Power Query</strong>, and create dynamic, interactive dashboards.</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Key Insights</h4>
+                        <p>The dashboards provided critical insights into the company's <strong>warehouse compute costs</strong> and <strong>user activity patterns</strong>. This visibility helped identify underutilized resources and optimize data operations, directly impacting the bottom line.</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>How It Works</h4>
+                        <p>Data was loaded into Snowflake and structured into a star schema for efficient querying. I used <strong>SQL</strong> and <strong>DAX</strong> to create custom measures and calculated columns in Power BI, powering the visualizations. The dashboards featured various views, enabling teams to drill down into specific metrics and understand performance at a granular level.</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Impact</h4>
+                        <ul>
+                            <li><strong>Optimized Performance:</strong> Enabled key stakeholders to analyze and reduce compute costs, improving overall data efficiency.</li>
+                            <li><strong>Improved Decision-Making:</strong> Provided cross-functional teams with a single source of truth for key metrics, allowing for more data-driven and informed strategic decisions.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-links">
+                        <button class="collapse-btn" onclick="toggleProjectDetails(this)">Show Less</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 - Task Management App -->
+            <div class="project-card">
+                <div class="project-image">📱</div>
+                <div class="project-content">
+                    <h3 class="project-title">Task Management App</h3>
+                    <p class="project-description">A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 - Weather Dashboard -->
+            <div class="project-card">
+                <div class="project-image">🌤️</div>
+                <div class="project-content">
+                    <h3 class="project-title">Weather Dashboard</h3>
+                    <p class="project-description">A responsive weather application with location-based forecasts, interactive charts, and a clean, intuitive interface.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
         <!-- Summary View -->
         <div class="project-summary">
             <p class="project-description">Designed and implemented a comprehensive business intelligence solution using Snowflake data warehouse with star schema modeling and Power BI dashboards, providing critical insights into warehouse compute costs and user activity patterns.</p>
@@ -765,19 +938,31 @@ section.skills > h2.section-title{
 
         // Toggle project details
 function toggleProjectDetails(button) {
-    const card = button.closest('.project-card');
-    const summary = card.querySelector('.project-summary');
-    const details = card.querySelector('.project-details');
-    
-    if (details.style.display === 'none' || details.style.display === '') {
-        summary.style.display = 'none';
-        details.style.display = 'block';
-    } else {
-        details.style.display = 'none';
-        summary.style.display = 'block';
-    }
-}
+            const projectCard = button.closest('.project-card');
+            const projectDetails = projectCard.querySelector('.project-details');
+            const expandBtn = projectCard.querySelector('.expand-btn');
+            const collapseBtn = projectCard.querySelector('.collapse-btn');
+            
+            if (projectDetails.classList.contains('show')) {
+                // Hide details
+                projectDetails.classList.remove('show');
+                if (expandBtn) expandBtn.style.display = 'inline-block';
+                if (collapseBtn) collapseBtn.style.display = 'none';
+            } else {
+                // Show details
+                projectDetails.classList.add('show');
+                if (expandBtn) expandBtn.style.display = 'none';
+                if (collapseBtn) collapseBtn.style.display = 'inline-block';
+            }
+        }
 
+        // Initialize collapse buttons to be hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseBtns = document.querySelectorAll('.collapse-btn');
+            collapseBtns.forEach(btn => {
+                btn.style.display = 'none';
+            });
+        });
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
