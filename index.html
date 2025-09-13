@@ -298,20 +298,19 @@
             font-size: 0.9rem;
             border: 1px solid rgba(59, 130, 246, 0.3);
         }
-
-        /* Projects Section */
        /* Projects Section */
+        /* Projects Section - Clean and Simple */
         .projects {
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #3b82f6, #9F1239);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #9F1239, #D946EF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -319,63 +318,86 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .project-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 400px; /* Limit card width */
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
         }
 
         .project-image {
-            height: 200px;
+            height: 150px; /* Reduced from 200px */
             background: linear-gradient(135deg, #9F1239, #D946EF);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: white;
         }
 
         .project-content {
-            padding: 2rem;
+            padding: 1.5rem; /* Reduced from 2rem */
         }
 
         .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
             color: #ffffff;
         }
 
         .project-description {
             color: #a0a0a0;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            /* Limit description length */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
         .project-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
         }
 
         .project-link {
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 1rem;
             background: rgba(59, 130, 246, 0.2);
             color: #3b82f6;
             text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
             border: 1px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
             cursor: pointer;
@@ -397,68 +419,13 @@
             color: white;
         }
 
-        /* Expandable Project Details */
-        .project-details {
-            padding: 0 2rem 2rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 1rem;
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .project-details.show {
-            opacity: 1;
-            max-height: 1000px;
-            padding: 2rem;
-        }
-
-        .detail-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .detail-section h4 {
-            color: #3b82f6;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .detail-section p {
-            color: #a0a0a0;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-
-        .detail-section ul {
-            margin: 0;
-            padding-left: 1.5rem;
-        }
-
-        .detail-section li {
-            color: #a0a0a0;
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-
-        .detail-section strong {
+        /* Category Headers */
+        .project-category {
+            text-align: center;
+            margin: 3rem 0 2rem 0;
             color: #ffffff;
-        }
-
-        .expand-btn, .collapse-btn {
-            background: rgba(156, 163, 175, 0.2);
-            color: #9ca3af;
-            border: 1px solid rgba(156, 163, 175, 0.3);
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .expand-btn:hover, .collapse-btn:hover {
-            background: #9ca3af;
-            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
         /* Responsive Design */
@@ -468,12 +435,12 @@
                 gap: 1.5rem;
             }
             
-            .project-links {
-                justify-content: center;
-            }
-            
             .projects {
-                padding: 4rem 1rem;
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
 
@@ -706,62 +673,24 @@ section.skills > h2.section-title{
     <!-- Projects Section -->
     <section class="projects">
         <h2 class="section-title">Projects</h2>
+        
+        <div class="project-category">ETL Pipeline & Data Engineering</div>
+        
         <div class="projects-grid">
-             <p><h2>ETL Pipeline & Data Engineering</h2></p>
-            <!-- Project 1 - Business Intelligence Dashboard (Expandable) -->
+            <!-- Project 1 - Business Intelligence Dashboard -->
             <div class="project-card">
-                <div class="project-image"></div>
+                <div class="project-image">📊</div>
                 <div class="project-content">
                     <h3 class="project-title">Business Intelligence Dashboard</h3>
-                    <p class="project-description">An end-to-end BI solution with Snowflake data warehouse and Power BI dashboards for tracking warehouse compute costs and user activity patterns. This project highlights your expertise in data warehousing, modeling, and business intelligence.</p>
-                    <div class="project-links">
-                        <button class="project-link expand-btn" onclick="toggleProjectDetails(this)">Show More</button>
-                        <a href="https://github.com/yourusername/snowflake-powerbi-project" class="project-link github-link" target="_blank">GitHub</a>
-                    </div>
-                </div>
-
-                <!-- Detailed View (Initially Hidden) -->
-                <div class="project-details">
-                    <div class="detail-section">
-                        <h4>Problem</h4>
-                        <p>Business teams lacked a unified and centralized view of key metrics. Data was siloed, making it difficult to analyze performance and make informed decisions, particularly regarding data warehouse costs and user activity.</p>
+                    <p class="project-description">End-to-end BI solution with Snowflake data warehouse and Power BI dashboards for tracking warehouse compute costs and user activity patterns.</p>
+                    
+                    <div class="project-tech-stack">
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">DAX</span>
                     </div>
                     
-                    <div class="detail-section">
-                        <h4>Solution</h4>
-                        <p>I designed and implemented a comprehensive end-to-end business intelligence solution. This involved building a data warehouse in <strong>Snowflake</strong> based on a <strong>star schema</strong> model, where I created fact and dimension tables. I then leveraged <strong>Power BI</strong> to connect to this warehouse, perform data transformations with <strong>Power Query</strong>, and create dynamic, interactive dashboards.</p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h4>Key Insights</h4>
-                        <p>The dashboards provided critical insights into the company's <strong>warehouse compute costs</strong> and <strong>user activity patterns</strong>. This visibility helped identify underutilized resources and optimize data operations, directly impacting the bottom line.</p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h4>How It Works</h4>
-                        <p>Data was loaded into Snowflake and structured into a star schema for efficient querying. I used <strong>SQL</strong> and <strong>DAX</strong> to create custom measures and calculated columns in Power BI, powering the visualizations. The dashboards featured various views, enabling teams to drill down into specific metrics and understand performance at a granular level.</p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h4>Impact</h4>
-                        <ul>
-                            <li><strong>Optimized Performance:</strong> Enabled key stakeholders to analyze and reduce compute costs, improving overall data efficiency.</li>
-                            <li><strong>Improved Decision-Making:</strong> Provided cross-functional teams with a single source of truth for key metrics, allowing for more data-driven and informed strategic decisions.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project-links">
-                        <button class="collapse-btn" onclick="toggleProjectDetails(this)">Show Less</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 - Task Management App -->
-            <div class="project-card">
-                <div class="project-image">📱</div>
-                <div class="project-content">
-                    <h3 class="project-title">Task Management App</h3>
-                    <p class="project-description">A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
                     <div class="project-links">
                         <a href="#" class="project-link">Live Demo</a>
                         <a href="#" class="project-link github-link">GitHub</a>
@@ -769,12 +698,186 @@ section.skills > h2.section-title{
                 </div>
             </div>
 
-            <!-- Project 3 - Weather Dashboard -->
+            <!-- Project 2 - Data Pipeline -->
             <div class="project-card">
-                <div class="project-image">🌤️</div>
+                <div class="project-image">⚡</div>
                 <div class="project-content">
-                    <h3 class="project-title">Weather Dashboard</h3>
-                    <p class="project-description">A responsive weather application with location-based forecasts, interactive charts, and a clean, intuitive interface.</p>
+                    <h3 class="project-title">Automated ETL Pipeline</h3>
+                    <p class="project-description">Scalable data pipeline processing millions of records daily with automated data quality checks and real-time monitoring.</p>
+                    
+                    <div class="project-tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Apache Airflow</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 - Real-time Analytics -->
+            <div class="project-card">
+                <div class="project-image">📈</div>
+                <div class="project-content">
+                    <h3 class="project-title">Real-time Analytics Platform</h3>
+                    <p class="project-description">Streaming analytics platform processing live data feeds with interactive dashboards and alerting systems.</p>
+                    
+                    <div class="project-tech-stack">
+                        <span class="tech-tag">Apache Kafka</span>
+                        <span class="tech-tag">Elasticsearch</span>
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-category">Machine Learning & AI</div>
+        
+        <div class="projects-grid">
+            <!-- Project 4 - ML Model -->
+            <div class="project-card">
+                <div class="project-image">🤖</div>
+                <div class="project-content">
+                    <h3 class="project-title">Predictive Analytics Model</h3>
+                    
+                    <div class="project-details-structured">
+                        <div class="detail-item">
+                            <h4>The Problem</h4>
+                            <p>Company struggled to predict customer churn, losing 30% annual revenue to competitors.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>The Solution</h4>
+                            <p>Built ML model using ensemble methods with automated feature engineering and MLOps pipeline.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>How It Works</h4>
+                            <p>Random Forest and XGBoost models trained on behavioral data, deployed via FastAPI endpoints.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>Key Insights</h4>
+                            <p>Achieved 92% accuracy identifying at-risk customers 3 months before churn events.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>Impact</h4>
+                            <p>Reduced customer churn 35% and increased retention revenue by $2.4M annually.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">MLflow</span>
+                        <span class="tech-tag">FastAPI</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 - NLP Application -->
+            <div class="project-card">
+                <div class="project-image">💬</div>
+                <div class="project-content">
+                    <h3 class="project-title">Document Intelligence System</h3>
+                    
+                    <div class="project-details-structured">
+                        <div class="detail-item">
+                            <h4>The Problem</h4>
+                            <p>Legal team spent 40+ hours weekly manually reviewing and categorizing contract documents.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>The Solution</h4>
+                            <p>Developed NLP system with transformer models for automated document analysis and classification.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>How It Works</h4>
+                            <p>BERT-based models extract entities and sentiment, with spaCy handling preprocessing workflows.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>Key Insights</h4>
+                            <p>Identified high-risk contract clauses and compliance issues with 88% accuracy rate.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>Impact</h4>
+                            <p>Reduced document review time 75% and prevented $500K in potential compliance violations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">spaCy</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link github-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 - Computer Vision -->
+            <div class="project-card">
+                <div class="project-image">👁️</div>
+                <div class="project-content">
+                    <h3 class="project-title">Image Recognition System</h3>
+                    
+                    <div class="project-details-structured">
+                        <div class="detail-item">
+                            <h4>The Problem</h4>
+                            <p>Manufacturing quality control required manual inspection, causing delays and human error.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>The Solution</h4>
+                            <p>Built computer vision system with deep learning models for automated defect detection.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>How It Works</h4>
+                            <p>CNN models process images in real-time, with OpenCV handling preprocessing and annotations.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>Key Insights</h4>
+                            <p>Detected microscopic defects invisible to human inspectors with 95% precision rate.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h4>Impact</h4>
+                            <p>Improved product quality 40% and reduced inspection costs by $1.2M annually.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-tech-stack">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">AWS S3</span>
+                    </div>
+                    
                     <div class="project-links">
                         <a href="#" class="project-link">Live Demo</a>
                         <a href="#" class="project-link github-link">GitHub</a>
