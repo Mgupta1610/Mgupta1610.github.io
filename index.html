@@ -1215,10 +1215,8 @@ h2.section-title {
             <div class="project-icon">📊</div>
             <h3 class="project-title">SynchIn: Supply Chain Visibility</h3>
             <p class="project-description">
-                Built an interactive Warehouse Inventory & Sales Analytics dashboard for a grocery dataset—cleaned and modeled the data, 
-                then surfaced the KPIs planners actually use: <span class="highlight">stock-outs, days-of-supply, inventory turnover, and supplier 
-                scorecards</span> (price, lead time, OTIF). Explore heatmaps of low-stock items, fast/slow movers, and "what-to-reorder" 
-                views that update with filters.
+               This project provides a Tableau dashboard to track warehouse inventory and sales. 
+               It uses a cleaned grocery dataset to compute stock levels, reorder flags, and supplier delivery summaries, and publishes interactive views for fast/slow-moving items.
             </p>
             
             <div class="project-tags">
@@ -1236,7 +1234,7 @@ h2.section-title {
                     <span class="stat-label">Cost Saved</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">3 Mo</span>
+                    <span class="stat-number">3 Months</span>
                     <span class="stat-label">Timeline</span>
                 </div>
             </div>
@@ -1245,38 +1243,67 @@ h2.section-title {
     </div>
 
   <!-- Project 2 - Real-Time Insurance Data ETL (Snowflake + Airflow) -->
-  <div class="project-card">
-    <div class="project-image"> <a href="https://github.com/Mgupta1610/Mgupta1610.github.io/blob/main/images/assets/Business.png" target="_blank" rel="noopener"></div>
-    <div class="project-content">
-      <h3 class="project-title">Real-Time Insurance Data ETL (Snowflake + Airflow)</h3>
-      <p class="project-description">
-        Airflow-orchestrated Kaggle → S3 (raw/curated) → Snowflake via Snowpipes, Streams & Tasks (CDC).
-          Idempotent jobs, schema/row-count checks, and partitioned tables. Tableau live/scheduled connections enable
-          near-real-time claims/policy analytics with cost-aware staging and warehouse sizing.
-        </p>
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/Mgupta1610/Real-Time-Insurance-Claims-Data-ETL-Pipeline" class="project-link">Full Story</a>
-      </div>
+     <div class="project-card">
+        <div class="project-header">
+            <div class="project-icon">📊</div>
+            <h3 class="project-title">Real-Time Insurance Data ETL</h3>
+            <p class="project-description">
+               This project provides an automated ETL to prepare insurance records for reporting. 
+               It uses Apache Airflow to ingest data to S3, apply basic validation/transformations, and load incremental changes into Snowflake, exposing curated tables for dashboards.
+            </p>
+            
+            <div class="project-tags">
+                <span class="tag">Snowflake</span>
+                <span class="tag">Airflow</span>
+                <span class="tag">S3</span>
+            </div>
+        </div>
+        
+        <div class="project-footer">
+            <div class="project-stats">
+                <div class="stat-item">
+                    <span class="stat-number">15%</span>
+                    <span class="stat-label">Cost Saved</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3 Months</span>
+                    <span class="stat-label">Timeline</span>
+                </div>
+            </div>
+            <a href="https://github.com/Mgupta1610/Synch-In-Supply-Chain-Visibility" class="project-link" target="_blank">Full Story</a>
+        </div>
     </div>
-  </div>
 
   <!-- Project 3 - Walmart Sales Analysis (SQL) -->
-  <div class="project-card">
-    <div class="project-image"></div>
-    <div class="project-content">
-      <h3 class="project-title">Walmart Sales Analysis (SQL)</h3>
-      <p class="project-description">
-        SQL-only analytics on product/branch performance, seasonal demand, and customer behavior.
-          Engineered <em>time_of_day</em>, <em>day_name</em>, and <em>month_name</em> for temporal insights.
-          Views & KPIs highlight busiest periods, top categories, and laggards, guiding promotions,
-          staffing, and inventory planning without external BI.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/Mgupta1610/Walmart-Sales-Data-Analysis" class="project-link">Full Story</a>
-      </div>
+    <div class="project-card">
+        <div class="project-header">
+            <div class="project-icon">📊</div>
+            <h3 class="project-title">Walmart Sales Analysis</h3>
+            <p class="project-description">
+               This project provides a set of SQL scripts to analyze retail sales. 
+               It uses lightweight feature engineering (time_of_day, day_name, month_name) and query packs to rank products, compare branches, and summarize customer segments, exporting results as views/CSVs.
+            </p>
+            <div class="project-tags">
+                <span class="tag">Snowflake</span>
+                <span class="tag">Airflow</span>
+                <span class="tag">S3</span>
+            </div>
+        </div>
+        
+        <div class="project-footer">
+            <div class="project-stats">
+                <div class="stat-item">
+                    <span class="stat-number">15%</span>
+                    <span class="stat-label">Cost Saved</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3 Months</span>
+                    <span class="stat-label">Timeline</span>
+                </div>
+            </div>
+            <a href="https://github.com/Mgupta1610/Synch-In-Supply-Chain-Visibility" class="project-link" target="_blank">Full Story</a>
+        </div>
     </div>
-  </div>
 
   <!-- Project 4 - End-to-End ML Data Pipeline -->
   <div class="project-card">
